@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"flag"
-	"fmt"
 	"os"
 	"strings"
 )
@@ -14,21 +13,17 @@ func main() {
 	wordCountPtr := flag.Int("words", loremWordsCount, "number of words")
 	flag.Parse()
 
-	if *wordCountPtr > loremWordsCount {
-		w := bufio.NewWriter(os.Stdout)
-		for i := 0; i < *wordCountPtr; i++ {
-			index := i % loremWordsCount
-			w.WriteString(loremWords[index])
-			if i != *wordCountPtr-1 {
-				w.WriteString(" ")
-			} else {
-				w.WriteString("\n")
-			}
+	w := bufio.NewWriter(os.Stdout)
+	for i := 0; i < *wordCountPtr; i++ {
+		index := i % loremWordsCount
+		w.WriteString(loremWords[index])
+		if i != *wordCountPtr-1 {
+			w.WriteString(" ")
+		} else {
+			w.WriteString("\n")
 		}
-
-		w.Flush()
-	} else {
-		fmt.Println(strings.Join(loremWords[:*wordCountPtr], " "))
 	}
+
+	w.Flush()
 
 }
