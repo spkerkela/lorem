@@ -1,5 +1,8 @@
 # Lorem ipsum generator
 
+## Build status
+[![CircleCI](https://circleci.com/gh/spkerkela/lorem.svg?style=svg)](https://circleci.com/gh/spkerkela/lorem)
+
 ## Installation
 ```bash
 $ go get github.com/spkerkela/lorem
