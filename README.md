@@ -13,3 +13,10 @@ Usage of lorem:
   -words int
         number of words (default 69)
 ```
+
+## Example output
+
+```bash
+$ lorem -words 5
+Lorem ipsum dolor sit amet,
+```
